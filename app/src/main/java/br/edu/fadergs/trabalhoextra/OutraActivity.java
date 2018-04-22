@@ -33,12 +33,12 @@ public class OutraActivity extends AppCompatActivity {
         tvNome = findViewById(R.id.tvNome);
         tvIdade = findViewById(R.id.tvIdade);
         tvSexo = findViewById(R.id.tvSexo);
-        tvPais = findViewById(R.id.tvPais);
+        //tvPais = findViewById(R.id.tvPais);
         tvIdiomasQueDomina = findViewById(R.id.tvIdiomasQueDomina);
 
         //Populando os campos com os valores que vieram da tela anterior via Intent
         tvNome.setText(nome);
-        tvIdade.setText(idade);
+        //tvIdade.setText(idade);
         tvSexo.setText(sexo);
         tvPais.setText(pais);
         tvIdiomasQueDomina.setText(idiomasQueDomina);

@@ -73,14 +73,15 @@ public class MainActivity extends AppCompatActivity {
         // Idiomas... pegando referência de cada campo, cada opção
         idiomasDominaPortugues = findViewById(R.id.cbPortugues);
         idiomasDominaIngles = findViewById(R.id.cbIngles);
-        idiomasDominaEspanhol = findViewById(R.id.cbEspanhol);
+        //idiomasDominaEspanhol = findViewById(R.id.cbEspanhol);
 
         enviar = findViewById(R.id.btnEnviar);
 
         //Listener no Botão "Enviar"
-        enviar.setOnClickListener(new View.OnFocusChangeListener() {
+        enviar.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this, OutraActivity.class);
 
@@ -102,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("ingles", idiomaIngles);
 
                 //*************** Checkbox se domina Espanhol
-                String idiomaEspanhol = idiomasDominaEspanhol.isChecked() ? getString(R.string.espanhol) : "-";
-                intent.putExtra("espanhol", idiomaEspanhol);
+                //String idiomaEspanhol = idiomasDominaEspanhol.isChecked() ? getString(R.string.espanhol) : "-";
+                //intent.putExtra("espanhol", idiomaEspanhol);
 
                 startActivity(intent);
                 finish();
@@ -123,6 +124,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "A idade informada foi " + idadeInformada);
 
 
-
+        return 0;
     }
 }
