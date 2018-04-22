@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TrabalhoExtra</string>
+    <string name="nome">Nome</string>
+    <string name="idade">Idade</string>
+    <string name="sexo">Sexo</string>
+    <string name="feminino">Feminino</string>
+    <string name="masculino">Masculino</string>
+    <string name="pais">País</string>
+    <string name="idiomas_possui_conhecimento">Idiomas que possui conhecimento</string>
+    <string name="selecione_opcao">Selecione uma opção</string>
+    <string name="argentina">Argentina</string>
+    <string name="brasil">Brasil</string>
+    <string name="bolivia">Bolivia</string>
+    <string name="idiomas_domina">Idiomas que domina</string>
+    <string name="portugues">Português</string>
+    <string name="ingles">Inglês</string>
+    <string name="validar">Validar</string>
+    <string name="enviar">Enviar</string>
+    <string name="voltar">Voltar</string>
+    <string name="mensagem_validacao_idade_pais">Idade é maior que 18 e o país selecionado é o Brasil. Tudo OK!</string>
+    <string name="erro_validacao_idade_pais">Idade não é maior que 18 ou o país selecionado não é o Brasil</string>
+    <string name="campos_obrigatororios_validacao_idade_pais">Idade e país devem ser informados</string>
+</resources>
