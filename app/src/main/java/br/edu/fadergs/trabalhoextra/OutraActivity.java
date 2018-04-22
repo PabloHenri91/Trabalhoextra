@@ -22,6 +22,7 @@ public class OutraActivity extends AppCompatActivity {
         //Pegando o Intent da tela anterior e deste os valores enviados
         Intent intent = getIntent();
         String nome = intent.getStringExtra("nome");
+        String idade = intent.getStringExtra("idade");
         String sexo = intent.getStringExtra("sexo");
         String pais = intent.getStringExtra("pais");
         String idiomasQueDomina =  intent.getStringExtra("portugues") + ", " +
@@ -33,16 +34,15 @@ public class OutraActivity extends AppCompatActivity {
         tvNome = findViewById(R.id.tvNome);
         tvIdade = findViewById(R.id.tvIdade);
         tvSexo = findViewById(R.id.tvSexo);
-        //tvPais = findViewById(R.id.tvPais);
+        tvPais = findViewById(R.id.tvPais);
         tvIdiomasQueDomina = findViewById(R.id.tvIdiomasQueDomina);
 
         //Populando os campos com os valores que vieram da tela anterior via Intent
         tvNome.setText(nome);
-        //tvIdade.setText(idade);
+        tvIdade.setText(idade);
         tvSexo.setText(sexo);
         tvPais.setText(pais);
         tvIdiomasQueDomina.setText(idiomasQueDomina);
-
     }
 
     public void voltar(View view) {

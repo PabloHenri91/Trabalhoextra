@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Sexo... pegando referência do campo
         sexo = findViewById(R.id.rgSexo);
+        sexo.check(R.id.rbFeminino);
 
         //****************** País - INÍCIO ***************************
         //País... pegando referência do campo
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         // Idiomas... pegando referência de cada campo, cada opção
         idiomasDominaPortugues = findViewById(R.id.cbPortugues);
         idiomasDominaIngles = findViewById(R.id.cbIngles);
-        //idiomasDominaEspanhol = findViewById(R.id.cbEspanhol);
+        idiomasDominaEspanhol = findViewById(R.id.cbEspanhol);
 
         enviar = findViewById(R.id.btnEnviar);
 
@@ -98,13 +99,17 @@ public class MainActivity extends AppCompatActivity {
                 String paisSelecionado = spPais.getSelectedItem().toString();
                 intent.putExtra("pais", paisSelecionado);
 
+                //*************** Checkbox se domina Português
+                String idiomaPortugues = idiomasDominaPortugues.isChecked() ? getString(R.string.portugues) : "-";
+                intent.putExtra("portugues", idiomaPortugues);
+
                 //*************** Checkbox se domina Inglês
                 String idiomaIngles = idiomasDominaIngles.isChecked() ? getString(R.string.ingles) : "-";
                 intent.putExtra("ingles", idiomaIngles);
 
                 //*************** Checkbox se domina Espanhol
-                //String idiomaEspanhol = idiomasDominaEspanhol.isChecked() ? getString(R.string.espanhol) : "-";
-                //intent.putExtra("espanhol", idiomaEspanhol);
+                String idiomaEspanhol = idiomasDominaEspanhol.isChecked() ? getString(R.string.espanhol) : "-";
+                intent.putExtra("espanhol", idiomaEspanhol);
 
                 startActivity(intent);
                 finish();
@@ -115,15 +120,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private Integer validar() {
-
+    public void validar(View view) {
         String paisSelecionado =  spPais.getSelectedItem().toString();
-        Log.d(TAG, "O país selecionado foi " + paisSelecionado);
+        Log.d(TAG, "O país selecionado foi |" + paisSelecionado + "|");
 
         String idadeInformada = idade.getText().toString();
-        Log.d(TAG, "A idade informada foi " + idadeInformada);
+        Log.d(TAG, "idadeInformada |" + idadeInformada + "|");
 
+        if (paisSelecionado.equals("Selecione uma opção") || idadeInformada.equals("")) {
+            Toast.makeText(view.getContext(), "Idade e pais devem ser informados", Toast.LENGTH_LONG).show();
+        } else {
+            if (Integer.parseInt(idadeInformada) >= 18 && paisSelecionado.equals("Brasil")) {
+                Toast.makeText(view.getContext(), "Idade é maior que 18 e o pais selecionado é o Brasil. Tudo OK!", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(view.getContext(), "Idade não é maior que 18 ou o pais seleciona não é o Brasil", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 
-        return 0;
+    public void enviar(View view) {
+        Intent intent = new Intent(getBaseContext(), OutraActivity.class);
+        startActivity(intent);
     }
 }

@@ -1,56 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Nome -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/idade"/>
+        android:layout_height="wrap_content"
+        android:text="@string/nome"/>
 
     <EditText
+        android:id="@+id/edtNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edtNome"/>
+        android:inputType="text" />
 
     <!-- Idade -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/nome"/>
+        android:layout_height="wrap_content"
+        android:text="@string/idade"/>
 
     <EditText
+        android:id="@+id/edtIdade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edtIdade"/>
+        android:inputType="number"/>
 
     <!-- Sexo -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/nome"/>
+        android:layout_height="wrap_content"
+        android:text="@string/sexo"/>
 
     <RadioGroup
         android:id="@+id/rgSexo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <RadioButton
             android:id="@+id/rbFeminino"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/feminino"
-            android:textSize="11sp"/>
+            android:text="@string/feminino" />
 
         <RadioButton
             android:id="@+id/rbMasculino"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/masculino"
-            android:textSize="11sp"/>
+            android:text="@string/masculino" />
+
     </RadioGroup>
 
     <!-- País -->
@@ -73,25 +75,22 @@
         android:text="@string/idiomas_domina"/>
 
     <CheckBox
-        android:text="@string/portugues"
         android:id="@+id/cbPortugues"
-        android:textSize="11sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="@string/portugues"/>
 
     <CheckBox
         android:text="@string/ingles"
         android:id="@+id/cbIngles"
-        android:textSize="11sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <!--<CheckBox-->
-        <!--android:text="@string/espanhol"-->
-        <!--android:id="@+id/cbEspanhol"-->
-        <!--android:textSize="11sp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"/>-->
+    <CheckBox
+        android:id="@+id/cbEspanhol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/espanhol"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -116,9 +115,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/enviar"/>
+            android:text="@string/enviar"
+            android:onClick="enviar"/>
 
     </LinearLayout>
-
 
 </LinearLayout>

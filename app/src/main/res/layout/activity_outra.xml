@@ -35,9 +35,9 @@
         android:text="@string/sexo"/>
 
     <TextView
+        android:id="@+id/tvSexo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvSexo"
         android:layout_marginBottom="10dp"/>
 
     <!-- País -->
@@ -46,6 +46,11 @@
         android:layout_height="wrap_content"
         android:text="@string/pais"/>
 
+    <TextView
+        android:id="@+id/tvPais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"/>
 
 
     <!-- Idiomas que domina -->
@@ -55,9 +60,9 @@
         android:text="@string/idiomas_domina"/>
 
     <TextView
+        android:id="@+id/tvIdiomasQueDomina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvIdiomasQueDomina"
         android:layout_marginBottom="10dp"/>
 
     <!-- Voltar -->
